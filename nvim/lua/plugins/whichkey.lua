@@ -52,6 +52,7 @@ wk.register({
         name = "+LSP",
         r = { "<cmd>lua require('telescope.builtin').lsp_references()<cr>", "References" },
         s = { "<cmd>SymbolsOutline<cr>", "Symbols" },
+        h = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover" },
     },
     ["<leader>s"] = {
         name = "+Finder", -- optional group name
