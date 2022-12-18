@@ -5,10 +5,11 @@ require("mason-lspconfig").setup({
         "clangd",
         "cmake",
         "gopls",
+        "rust_analyzer",
         "sumneko_lua",
         "tsserver",
         "html",
-        "rust_analyzer",
+        "buf-language-server",
+        "zls",
     },
 })
-

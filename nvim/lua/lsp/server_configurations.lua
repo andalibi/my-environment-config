@@ -1,22 +1,26 @@
 local lspconfig = require("lspconfig")
 
 -- Setup lspconfig.
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- c/c++ language servers setup
 lspconfig.clangd.setup({ capabilities = capabilities })
 lspconfig.cmake.setup({ capabilities = capabilities })
 
---
+--------------------------------------------------------------------------------
+-- Language: Golang
 -- golang language servers setup
 lspconfig.gopls.setup({ capabilities = capabilities })
 
+--------------------------------------------------------------------------------
 -- front-end language servers setup
 lspconfig.html.setup({ capabilities = capabilities })
 lspconfig.tsserver.setup({ capabilities = capabilities })
 lspconfig.angularls.setup({ capabilities = capabilities })
 
--- lua language servers setup
+--------------------------------------------------------------------------------
+-- Language  : Lua
+-- Repository: https://github.com/sumneko/lua-language-server
 lspconfig.sumneko_lua.setup({
     capabilities = capabilities,
     settings = {
@@ -40,3 +44,13 @@ lspconfig.sumneko_lua.setup({
         },
     },
 })
+
+--------------------------------------------------------------------------------
+-- Language  : ProtoBuffer
+-- Repository: https://github.com/bufbuild/buf-language-server
+lspconfig.bufls.setup({ capabilities = capabilities })
+
+--------------------------------------------------------------------------------
+-- Language  : ProtoBuffer
+-- Repository: https://github.com/bufbuild/buf-language-server
+lspconfig.zls.setup({ capabilities = capabilities })
