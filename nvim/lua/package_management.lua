@@ -19,6 +19,7 @@ return require("packer").startup(function()
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
+        "ray-x/lsp_signature.nvim",
     })
     -- use "nvim-lua/completion-nvim"
 
@@ -67,15 +68,10 @@ return require("packer").startup(function()
     -- format runner
     use("mhartington/formatter.nvim")
 
-    -- color scheme
+    -- colorscheme
     -- use 'olimorris/onedarkpro.nvim'
-    --     use 'folke/tokyonight.nvim'
-    -- use({
-    -- 'projekt0n/github-nvim-theme',
-    -- config = function()
-    -- end
-    -- })
     use({ "catppuccin/nvim", as = "catppuccin" })
+    -- use("Tsuzat/NeoSolarized.nvim")
 
     -- diagnostics
     use({ "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" })
@@ -125,5 +121,17 @@ return require("packer").startup(function()
         config = function()
             require("better_escape").setup()
         end,
+    })
+
+    -- documentation
+    use({
+        "nvim-neorg/neorg",
+        requires = "nvim-lua/plenary.nvim",
+    })
+
+    --
+    use({
+        "mg979/vim-visual-multi",
+        branch = "master",
     })
 end)
